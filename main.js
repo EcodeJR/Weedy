@@ -19,15 +19,16 @@ if (search_bx.value == false) {
 }
 
 
-function search_image() {
-    search_val = ''
-    search_val = search_bx.value;
-    console.log(search_val);
-};
+
 
 
 let link = "https://api.unsplash.com/search/photos?query=" + search_val + "&client_id=vrFpy-bk81H1g7cSVsBsgblBCFkj46ARiO_tM7QMueY&per_page=1"
 
+function search_image() {
+    search_val = '';
+    search_val = $("#search_input").val();
+    console.log(search_val);
+};
 
 
 $.ajax({
