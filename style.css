@@ -7,6 +7,7 @@
 #body1 {
     width: 100%;
     height: 100vh;
+    display: flex;
 }
 
 #container {
@@ -24,32 +25,106 @@
     object-fit: cover;
 }
 
+.weather_info {
+    height: 100%;
+    width: 50%;
+    border-radius: 0 25% 25% 0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather_info hr {
+    width: 80%;
+    border: none;
+    background-color: #fff;
+    height: 1px;
+    margin: 10px 0;
+}
+
+.city {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.city span {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#day {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#day span {
+    font-size: 20px;
+}
+
+#degree {
+    font-size: 50px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.search {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#time {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
 .inp {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 70px;
-    width: 70vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50px;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
+    justify-content: flex-end;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
 }
 
 .inp i {
     font-size: 30px;
     cursor: pointer;
+    padding: 10px;
+    background-color: #921b1e;
+    color: #fff;
 }
 
 #search_input {
     height: 100%;
-    width: 90%;
+    width: 80%;
     border: none;
     padding: 0 10px;
     font-size: 17px;
     font-weight: 700;
     outline: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
     background-color: transparent;
+}
+
+#search_input:focus {
+    border-bottom: 1px solid #921b1e;
+}
+
+#search_input::placeholder {
+    color: #fdf3f3;
 }
