@@ -28,7 +28,7 @@
 .weather_info {
     height: 100%;
     width: 50%;
-    border-radius: 0 25% 25% 0;
+    border-radius: 0 50px 50px 0;
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
@@ -48,6 +48,8 @@
     font-size: 50px;
     font-weight: 600;
     color: #fff;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .city span {
@@ -116,7 +118,7 @@
     font-size: 17px;
     font-weight: 700;
     outline: none;
-    color: #fff;
+    color: #222;
     border-bottom: 1px solid #fff;
     background-color: transparent;
 }
@@ -126,5 +128,28 @@
 }
 
 #search_input::placeholder {
-    color: #fdf3f3;
+    color: #333;
+}
+
+@media only screen and (max-width: 630px) {
+    #body1 {
+        flex-direction: column-reverse;
+    }
+    .weather_info {
+        height: 70%;
+        width: 100%;
+        border-radius: 25px 25px 0 0;
+    }
+    .search {
+        position: relative;
+        width: 100%;
+        height: 30%;
+        display: flex;
+    }
+    .city {
+        font-size: 50px;
+    }
+    #time {
+        font-size: 30px;
+    }
 }

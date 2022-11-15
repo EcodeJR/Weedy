@@ -36,10 +36,13 @@ $.ajax({
 
 //clock
 let time = document.getElementById('time');
+let day0 = document.getElementById('day');
 
 setInterval(() => {
     let d = new Date();
     time.innerHTML = d.toLocaleTimeString();
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    day0.innerHTML = weekday[d.getDay()];
 }, 1000);
 
 
@@ -53,28 +56,38 @@ search_btn.addEventListener('click', function() {
 
 function search_image() {
     city.innerHTML = search_bx.value;
-
-    console.log(city.innerHTML);
     search_bx.value = '';
-
-
-
 };
 search_val = search_bx.value;
 
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        console.log("Geolocation is not supported by this browser.");
-        city.innerHTML = "Undefined";
-    }
-}
-getLocation();
+//geting user location
+const findmylocation = () => {
 
-function showPosition(position) {
-    city.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
+
+    const success = (position) => {
+        console.log(position);
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        const locationApi = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+
+        fetch(locationApi)
+            .then(res => res.json())
+            .then(data => {
+                city.innerHTML = data.city
+            })
+
+    }
+
+
+    const error = () => {
+        city.innerHTML = 'Unadle to get Location';
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
+
+
 }
-showPosition();
+
+window.addEventListener('load', findmylocation);
