@@ -152,12 +152,18 @@
         min-height: 70vh;
         width: 100%;
         border-radius: 25px 25px 0 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
     .search {
         position: relative;
         width: 100%;
         min-height: 30vh;
         display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
     .city {
         font-size: 50px;
