@@ -14,7 +14,7 @@
 
 <body class="body1" id="body1">
     <div id="container"></div>
-    <div class="weather_info">
+    <div class="weather_info loading">
         <h1 class="city" id="city">
 
         </h1>
@@ -23,16 +23,19 @@
 
         </h2>
         <hr>
-        <h3 id="degree">
-            50
-        </h3>
+        <div class="flex">
+            <h3 id="degree">
+
+            </h3>
+            <img src="" alt="" id="icon">
+        </div>
     </div>
 
 
     <div class="search">
         <h1 id="time"></h1>
         <div class="inp">
-            <input id="search_input" type="text" name="search1" placeholder="Enter a country">
+            <input id="search_input" type="text" name="search1" placeholder="Enter a city">
             <i class="bx bx-search" onclick="search_image()" id="btn"></i>
         </div>
     </div>
