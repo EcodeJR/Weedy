@@ -47,6 +47,8 @@ const findmylocation = () => {
             .then(responde => responde.json())
             .then(data => {
                 city.innerHTML = data.city
+                weatherApp.fetchWeather(city.innerHTML)
+                document.getElementById('body1').style.background = "url('https://source.unsplash.com/1600x900/?" + data.city + "')";
             })
 
     }
