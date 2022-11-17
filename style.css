@@ -15,7 +15,8 @@
     display: flex;
     background: url('https://source.unsplash.com/1600x900/?asia');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #container {
@@ -79,6 +80,8 @@
 
 .flex {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #degree {
@@ -89,6 +92,11 @@
 
 #icon {
     height: 50px;
+}
+
+#description {
+    font-size: 15px;
+    color: #fff;
 }
 
 .search {

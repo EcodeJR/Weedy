@@ -52,15 +52,11 @@ const findmylocation = () => {
             })
 
     }
-
-
     const error = () => {
         city.innerHTML = 'Unable to get location';
     }
 
     navigator.geolocation.getCurrentPosition(success, error);
-
-
 }
 
 
@@ -80,10 +76,12 @@ let weatherApp = {
     displayWeather: function(data) {
         const { name } = data;
         const { icon } = data.weather[0];
+        const { description } = data.weather[0];
         const { temp } = data.main;
         city.innerHTML = name;
         document.getElementById('degree').innerHTML = temp + "°C";
         document.getElementById('icon').src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+        document.getElementById('description').innerText = description;
         document.querySelector('.weather_info').classList.remove('loading');
         document.getElementById('body1').style.background = "url('https://source.unsplash.com/1600x900/?" + name + "')";
     },
